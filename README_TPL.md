@@ -1,4 +1,4 @@
-# 2016-06-MVP-project# Project Name #
+# Project Name #
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
