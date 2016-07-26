@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='mobee'>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+  <h1 class=''>Mobee</h1>
+  <div ng-controller='appController'>
+
+
+  <form>
+    <input type="search" ng-change='findMovie()' ng-model='film'/>
+    <select size="6"  ng-repeat = 'films in search'  >
+    <option ng-click='addToMovies(films.Title)'> {{ films.Title }} </option>
+    </select>
+    <button>Find</button>
+  </form>
+
+  <table style="border: 1px solid #000;" > 
+    <tr >
+      <th>Movier</th>
+      <th>Poster</th>
+      <th>Plot</th>
+      <th>Year</th>
+      <th>Awards</th>
+    </tr> 
+    <tr ng-repeat="movie in data.movies">
+      <td> {{ movie.Title }} </td>
+      <td> <img src="{{ movie.Poster }}" style="width:120px;height:200px;"> </td>
+      <td> {{ movie.Plot }} </td>
+      <td> {{ movie.Year }} </td>
+      <td> {{ movie.Awards }} </td>
+    </tr>
+  </table>
+  <br>
+  </div>
+</body>
+<script src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</html>
