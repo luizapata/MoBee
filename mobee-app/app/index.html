@@ -7,23 +7,24 @@
   </head>
 
   <body>
-    <h1 class=''>Mobee</h1>
+    <header>
+      <h1>Mobee</h1>
+    </header>
 
     <div ng-controller='appController'>
 
 
       <form >
-        <input type="search" ng-change='findMovie()' ng-model='film'/>
+        <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
       </form>
-      <button>Find</button>
         <table ng-repeat = 'films in search ' >
           <th class='btn' ng-click='addToMovies(films.Title)'> {{ films.Title }} </th>
         </table>
       <br>
-
+ 
       <table>
-        <th ng-repeat="movie in data.movies" style="border: 1px solid #000;" class='box'>
-        <button >delete</button>
+        <th ng-repeat="movie in data.movies"  class='box'>
+        <button class='delete' ng-click='deleteFromSelection(movie)'>delete</button>
           <h2> {{ movie.Title }} </h2>
           <div> <img src="{{ movie.Poster }}" style="width:120px;height:200px;"> </div>
           <br>

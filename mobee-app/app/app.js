@@ -30,6 +30,11 @@ app.controller('appController', function($scope, Find){
     $scope.search = []
   };
 
+  $scope.deleteFromSelection = function(movie){
+    var index = $scope.data.movies.indexOf(movie);
+    $scope.data.movies.splice(index, 1)
+  }
+
 });
 
 

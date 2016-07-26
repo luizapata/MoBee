@@ -1,6 +1,15 @@
 h1{
-text-align: center;
-color: blue;
+  text-align: center;
+  font-family: Arial;
+  color: #CDDC39;
+  text-decoration: none;
+  margin: 0;
+}
+
+header{
+  background-color: #00BCD4;
+  height: 80px;
+  padding-top: 30px
 }
 
 select {
@@ -35,3 +44,60 @@ select {
   text-decoration: none;
 }
 
+
+.enjoy-css {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 7px;
+  padding: 12px;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,142,198,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+}
+
+.box{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font: normal 16px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #727272;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #B3E5FC;
+  padding: 8px
+ }
+
+ .delete{
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  position: absolute;
+  cursor: pointer;
+  padding: 2px 4px;
+  border: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal 16px/normal "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #0199d9;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2) ;
+}
+
+.delete:hover {
+  position: absolute;
+  background: #F5AB99;
+}
