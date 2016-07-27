@@ -9,6 +9,7 @@ app.controller('appController', function($scope, Find){
 
   $scope.film = 'movie title';
   $scope.search = [];
+  $scope.rating = 0;
 
   $scope.findMovie = function(){
     console.log('works')
@@ -20,10 +21,14 @@ app.controller('appController', function($scope, Find){
   };
 
   $scope.addToMovies = function(title){
-    console.log(title)
     Find.getTitle(title).then(function(res){
-      console.log(res)
-      $scope.data.movies.push(res);
+      if(!Find.findInArray($scope.data.movies, res)){
+        $scope.data.movies.push(res);
+      }else{
+        alert('you already selected this movie')
+      }
+      $scope.rating = Find.findRating($scope.data.movies, $scope.rating)
+      console.log('Rating',$scope.rating)
     });
 
     $scope.film = ''
@@ -33,7 +38,11 @@ app.controller('appController', function($scope, Find){
   $scope.deleteFromSelection = function(movie){
     var index = $scope.data.movies.indexOf(movie);
     $scope.data.movies.splice(index, 1)
-  }
+    $scope.rating = 0
+    $scope.rating = Find.findRating($scope.data.movies, $scope.rating)
+  };
+
+
 
 });
 
@@ -62,11 +71,34 @@ app.factory('Find', function ($http) {
     }, function errorCallback(response) {
       return console.log("Error movie not found");
     });
-  }
+  };
+
+  var findInArray = function(arr, obj){
+    if(arr.length > 0){
+      for (var i = 0; i < arr.length; i++) {
+        if(arr[i].Title === obj.Title ){
+          return true
+        }
+      }
+    }
+    return false
+  };
+
+    var findRating = function(arr, current){
+      for (var i = 0; i < arr.length; i++) {
+        if(arr[i].imdbRating > current ){
+          return arr[i].imdbRating
+        }
+      }
+    return current
+    }
+
 
   return {
     getForSearch: getForSearch,
-    getTitle: getTitle
+    getTitle: getTitle,
+    findInArray: findInArray,
+    findRating: findRating
   };
 
 });

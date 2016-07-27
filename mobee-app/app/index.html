@@ -23,15 +23,18 @@
       <br>
  
       <table>
-        <th ng-repeat="movie in data.movies"  class='box'>
-        <button class='delete' ng-click='deleteFromSelection(movie)'>delete</button>
+        <th ng-repeat="movie in data.movies"  class='box' >
+        <button class='delete' ng-click='deleteFromSelection(movie)'>mmmm Bye</button>
           <h2> {{ movie.Title }} </h2>
           <div> <img src="{{ movie.Poster }}" style="width:120px;height:200px;"> </div>
           <br>
+          <div ng-show='rating == movie.imdbRating'> <img src="http://www.clipartbest.com/cliparts/aTq/oao/aTqoaoqpc.png" style="width:120px;height:40px;"></div>
           <h3> Rating : {{ movie.imdbRating }} </h3>
           <br>
           <h3> Genre: {{ movie.Genre }} </h3>
           <div>
+            <a> {{ movie.Director }} </a>
+            <br>
             <p> {{ movie.Plot }} </p>
             <br>
             <a> {{ movie.Year }} </a>
