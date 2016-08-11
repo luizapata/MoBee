@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="">
+    <title>moBee!</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- custom styles -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+
+
+
+
+    <!-- JS -->
+</head>
+<body ng-app='mobee'>
+<div class="container">
+
+
+    <!-- ANGULAR DYNAMIC CONTENT -->
+
+    <div ng-view></div>
+
+</div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/services/mainFactory.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
