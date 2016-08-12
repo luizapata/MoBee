@@ -1,33 +1,63 @@
 
-<div >
+<div>
 
-  <form >
-    <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
-  </form>
-    <table ng-repeat = 'films in search ' >
-      <th class='btn' ng-click='addToMovies(films.Title)'> {{ films.Title }} </th>
-    </table>
-  <br>
+    <div id="discover-header">
+      <span>MoBee</span>
+    </div>
 
-  <table>
-    <th ng-repeat="movie in data.movies"  class='box' >
-    <button class='delete' ng-click='deleteFromSelection(movie)'>mmmm Bye</button>
+  <div layout="row" >
+    <div flex></div>
+      <md-input-container flex="40" md-no-float>
+        <label>Title</label>
+        <md-icon <i class="material-icons">&#xE63B;</i></md-icon>
+        <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
+      </md-input-container>
+    <div flex></div>
+  </div>
+
+<!--   <table ng-repeat = 'films in search ' >
+  <th class='btn' ng-click='addToMovies(films.Title)'> {{ films.Title }} </th>
+  </table>
+  <br> -->
+
+ <!--  <section layout="row">
+    <div flex></div>
+    <div flex="40" id="query-results-container">
+      <div layout="row" layout-padding id="query-results"  ng-repeat="films in search ">
+          <span id="name-query-results" layout-padding  ng-click='addToMovies(films.Title)'>{{films.name}}</span>
+        </div>
+      </div>
+    </div>
+    <div flex></div>  
+  </section> -->
+
+
+
+  <div layout="row" ayout-align="space-around center">
+  <div ng-repeat="movie in data.movies"  class='box' >
+
+  <md-button class="md-icon-button md-accent" aria-label="delete" ng-click='deleteFromSelection(movie)'>
+  <md-icon <i class="material-icons">&#xE14C;</i></md-icon>
+  </md-button>
+
+
+    <div layout="column" layout-align="space-around center">
+      <div ng-show='rating == movie.imdbRating'>  
+        <md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon>
+      </div>
       <h2> {{ movie.Title }} </h2>
       <div> <img src="{{ movie.Poster }}" style="width:120px;height:200px;"> </div>
       <br>
-      <div ng-show='rating == movie.imdbRating'> <img src="http://www.clipartbest.com/cliparts/aTq/oao/aTqoaoqpc.png" style="width:120px;height:40px;"></div>
       <h3> Rating : {{ movie.imdbRating }} </h3>
       <br>
       <h3> Genre: {{ movie.Genre }} </h3>
-      <div>
-        <a> {{ movie.Director }} </a>
-        <br>
-        <p> {{ movie.Plot }} </p>
-        <br>
-        <a> {{ movie.Year }} </a>
-        <br>
+      <div layout="column" layout-align="space-around center">
+        <a> {{ movie.Director }} </a> <br>
+        <p> {{ movie.Plot }} </p> <br>
+        <a> {{ movie.Year }} </a> <br>
         <a> {{ movie.Awards }} </a>
       </div>
-    </th>
-  </table>
+    </div>
+  </div>
+  </div>
 </div>

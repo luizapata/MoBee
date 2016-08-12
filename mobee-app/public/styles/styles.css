@@ -63,41 +63,23 @@ select {
 }
 
 .box{
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border: none;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  font: normal 16px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: #727272;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  background: #B3E5FC;
-  padding: 8px
+  border: 1px solid #DEDEDC;
+  padding: 5px;
+  width: 32%;
+  top: 30px;
+  right: 64%;
+  background-color: #E9EBEE;
+  box-shadow: 1px 1px 8px #DEDEDC;
+  border-radius: 3px;
  }
 
- .delete{
-  display: inline-block;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  position: absolute;
-  cursor: pointer;
-  padding: 2px 4px;
-  border: none;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  font: normal 16px/normal "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: rgba(255,255,255,0.9);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  background: #0199d9;
-  -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2) ;
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2) ;
+ #discover-header {
+  color: #35B1D0;
+  font-size: 5em; 
+  font-weight: 700; 
+  text-align: center; 
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
 }
 
-.delete:hover {
-  position: absolute;
-  background: #F5AB99;
-}
+

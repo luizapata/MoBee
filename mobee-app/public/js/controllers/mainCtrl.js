@@ -8,7 +8,7 @@ angular.module('mainController', ['FindService'])
     movies : []
   };
 
-  $scope.film = 'movie title';
+  $scope.film = '';
   $scope.search = [];
   $scope.rating = 0;
 
