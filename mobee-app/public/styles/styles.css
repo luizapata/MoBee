@@ -63,14 +63,9 @@ select {
 }
 
 .box{
-  border: 1px solid #DEDEDC;
-  padding: 5px;
   width: 32%;
   top: 30px;
   right: 64%;
-  background-color: #E9EBEE;
-  box-shadow: 1px 1px 8px #DEDEDC;
-  border-radius: 3px;
  }
 
  #discover-header {

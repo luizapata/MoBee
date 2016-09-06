@@ -22,6 +22,7 @@ angular.module('mainController', ['FindService'])
   };
 
   $scope.addToMovies = function(title){
+    console.log($scope.data.movies)
     Find.getTitle(title).then(function(res){
       if(!Find.findInArray($scope.data.movies, res)){
         $scope.data.movies.push(res);

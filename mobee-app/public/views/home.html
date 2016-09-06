@@ -15,10 +15,10 @@
     <div flex></div>
   </div>
 
-<!--   <table ng-repeat = 'films in search ' >
+  <table ng-repeat = 'films in search ' >
   <th class='btn' ng-click='addToMovies(films.Title)'> {{ films.Title }} </th>
   </table>
-  <br> -->
+  <br>
 
  <!--  <section layout="row">
     <div flex></div>
@@ -31,31 +31,41 @@
     <div flex></div>  
   </section> -->
 
-
-
   <div layout="row" ayout-align="space-around center">
   <div ng-repeat="movie in data.movies"  class='box' >
-
-  <md-button class="md-icon-button md-accent" aria-label="delete" ng-click='deleteFromSelection(movie)'>
+<md-card>
+        <md-card-header>
+            <md-button class="md-icon-button md-accent" aria-label="delete" ng-click='deleteFromSelection(movie)'>
   <md-icon <i class="material-icons">&#xE14C;</i></md-icon>
   </md-button>
 
-
-    <div layout="column" layout-align="space-around center">
-      <div ng-show='rating == movie.imdbRating'>  
+          <md-card-header-text>
+            <span class="md-title">{{ movie.Title }}</span>
+          </md-card-header-text>
+        </md-card-header>
+        <img ng-src="{{ movie.Poster }}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+                  <div ng-show='rating == movie.imdbRating'>  
         <md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon><md-icon <i class="material-icons">&#xE8D0;</i></md-icon>
       </div>
-      <h2> {{ movie.Title }} </h2>
-      <div> <img src="{{ movie.Poster }}" style="width:120px;height:200px;"> </div>
-      <br>
-      <h3> Rating : {{ movie.imdbRating }} </h3>
-      <br>
-      <h3> Genre: {{ movie.Genre }} </h3>
-      <div layout="column" layout-align="space-around center">
-        <a> {{ movie.Director }} </a> <br>
-        <p> {{ movie.Plot }} </p> <br>
+
+            <span class="md-headline">{{ movie.Director }}</span>
+            <span class="md-subhead">Rating : {{ movie.imdbRating }}</span>
+            <span class="md-subhead">Genre: {{ movie.Genre }}</span>
+
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p> {{ movie.Plot }} </p>
         <a> {{ movie.Year }} </a> <br>
         <a> {{ movie.Awards }} </a>
+
+        </md-card-content>
+      </md-card>
+
+
+
       </div>
     </div>
   </div>
