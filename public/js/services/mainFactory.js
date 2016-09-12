@@ -1,9 +1,11 @@
-angular.module('FindService', []).factory('Find', ['$http', function($http) {
+angular.module('FindService', [])
+
+.factory('Find', ['$http', function($http) {
 
   var getForSearch = function(title){
     return $http({
       method: 'GET',
-      url: "http://www.omdbapi.com/?plot=short&r=json&s="+ title,
+      url: "https://www.omdbapi.com/?plot=short&r=json&s="+ title,
       contentType: 'application/json'
     }).then(function successCallback(response) {
       return response.data;
@@ -12,10 +14,10 @@ angular.module('FindService', []).factory('Find', ['$http', function($http) {
     });
   }
 
-  var getTitle = function(title){
+  var getByTitle = function(title){
     return $http({
       method: 'GET',
-      url: "http://www.omdbapi.com/?plot=short&r=json&t="+ title,
+      url: "https://www.omdbapi.com/?plot=short&r=json&t="+ title,
       contentType: 'application/json'
     }).then(function successCallback(response) {
       return response.data;
@@ -47,7 +49,7 @@ angular.module('FindService', []).factory('Find', ['$http', function($http) {
 
   return {
     getForSearch: getForSearch,
-    getTitle: getTitle,
+    getByTitle: getByTitle,
     findInArray: findInArray,
     findRating: findRating
   };

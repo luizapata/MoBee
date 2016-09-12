@@ -14,11 +14,36 @@
       </md-input-container>
     <div flex></div>
   </div>
+  <div flex='50' >
+    <md-list flex layout-align="center center" >
+      <md-list-item class="md-3-line md-raised" ng-repeat="films in search">
+        <div ng-click='addToMovies(films.Title)'>
+          <h3>{{ films.Title }}</h3>
+        </div>
+      <md-divider></md-divider>
+      </md-list-item>
+    </md-list >
+  </div>
 
-  <table ng-repeat = 'films in search ' >
-  <th class='btn' ng-click='addToMovies(films.Title)'> {{ films.Title }} </th>
-  </table>
-  <br>
+
+<!--   <div layout="column" >
+    <div flex></div>
+      <md-input-container flex="40" md-no-float>
+        <label>Title</label>
+        <md-icon <i class="material-icons">&#xE63B;</i></md-icon>
+        <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
+      </md-input-container>
+      <md-list flex  md-no-float>
+      <md-list-item class="md-3-line" ng-repeat="films in search">
+        <div class="md-list-item-text">
+          <h3 ng-click='addToMovies(films.Title)'>{{ films.Title }}</h3>
+        </div>
+      <md-divider></md-divider>
+      </md-list-item>
+    </md-list >
+    <div flex></div>
+  </div> -->
+
 
  <!--  <section layout="row">
     <div flex></div>
@@ -31,7 +56,7 @@
     <div flex></div>  
   </section> -->
 
-  <div layout="row" ayout-align="space-around center">
+  <div layout="row" layout-align="space-around center">
   <div ng-repeat="movie in data.movies"  class='box' >
 <md-card>
         <md-card-header>
