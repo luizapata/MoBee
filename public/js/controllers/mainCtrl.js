@@ -1,7 +1,7 @@
 angular.module('mainController', ['FindService'])
 
 
-.controller('appController', function($scope, Find){
+.controller('appController', function($scope, Find, $mdToast){
 
   
   $scope.data = {
@@ -22,17 +22,19 @@ angular.module('mainController', ['FindService'])
   };
 
   $scope.addToMovies = function(title){
-    console.log($scope.data.movies)
     Find.getByTitle(title).then(function(res){
       if(!Find.findInArray($scope.data.movies, res)){
         $scope.data.movies.push(res);
       }else{
-        alert('No, No, No')
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent('You already added this movie to your list')
+          .position('top right')
+          .hideDelay(3000)
+        );
       }
       $scope.rating = Find.findRating($scope.data.movies, $scope.rating)
-      console.log('Rating',$scope.rating)
     });
-
     $scope.film = ''
     $scope.search = []
   };
