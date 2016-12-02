@@ -1,5 +1,5 @@
 body{
-  background: -webkit-linear-gradient(top, #db7093 0%,#ffffff 100%);
+  background: -webkit-linear-gradient(top, #15b6b9 0%, #10ddc2 33%, #f5f5f5 82%, #fafafa 100%);
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -18,29 +18,23 @@ header{
 }
 
 select {
-    padding:3px;
-    margin: 0;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
-    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    background: #f8f8f8;
-    color:#888;
-    border:none;
-    outline:none;
-    display: inline-block;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    cursor:pointer;
-}
-
-div.box.ng-scope{
-  width: 32%;
-  top: 30px;
-  right: 64%;
+  padding:3px;
+  margin: 0;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  background: #f8f8f8;
+  color:#888;
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  cursor:pointer;
 }
 
 .listElements{
@@ -89,15 +83,62 @@ md-card md-card-header md-card-header-text{
   width: 32%;
   top: 30px;
   right: 64%;
- }
+}
 
- #header {
-    color: rgb(236, 236, 236);
-    font-size: 5em;
-    font-weight: 700;
-    text-align: center;
-    padding-top: 0.5em;
-    padding-bottom: 0.1em;
+#main-header {
+  color: #F57170;
+  font-size: 5em;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
+  text-shadow: 1px 1px #DC6564
+}
+
+.md-card-image{
+  width: 40%;
+  align-self: center
+}
+
+.compareBtn {
+  background-color:#109294;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border:3px solid #0c7476;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  padding:15px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 3px #2f6627;
+  width: 200px;
+
+}
+.compareBtn:hover {
+  background-color:#0E8385;
+}
+
+.material-icons.star{
+  color:#ffc952;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+.material-icons.close:hover {
+  color:#ef5285;
+}
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
   }
 
-
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

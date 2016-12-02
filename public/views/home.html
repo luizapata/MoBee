@@ -1,6 +1,6 @@
 <div>
 
-  <div id="header">
+  <div id="main-header">
     <span>MoBee</span>
   </div>
 
@@ -8,7 +8,7 @@
     <div flex></div>
     <md-input-container flex="40" md-no-float>
       <label>Title</label>
-      <md-icon md-svg-icon='images/ic_theaters_black_36px.svg'></md-icon>
+      <md-icon ><i class="material-icons theaters">theaters</i></md-icon>
       <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
     </md-input-container>
     <div flex></div>
@@ -32,24 +32,23 @@
       <md-card>
 
         <md-card-header>
-          <md-button class="md-icon-button md-accent" aria-label="delete" ng-click='deleteFromSelection(movie)'>
-            <md-icon md-svg-icon='images/ic_close_black_24px.svg'></md-icon>
-          </md-button>
+          <md-button class="md-icon-button " aria-label="delete" ng-click='deleteFromSelection(movie)'>
+            <i class="material-icons close">close</i>
+          </md-button><br>
           <md-card-header-text>
             {{ movie.Title }}
           </md-card-header-text>
         </md-card-header>
+        
+        <md-card-actions layout="row" layout-align="center center">
+            <div  ng-show='rating == movie.imdbRating'>    
+            <i class="material-icons star">stars</i>        
+            </div>
+        </md-card-actions>
 
         <img ng-src="{{ movie.Poster }}" class="md-card-image" alt="Washed Out">
         <md-card-title>
           <md-card-title-text>
-            <div layout-align="space-around center" ng-show='rating == movie.imdbRating'>
-              <md-icon md-svg-icon='images/ic_star_black_24px.svg'></md-icon>
-              <md-icon md-svg-icon='images/ic_star_black_24px.svg'></md-icon>
-              <md-icon md-svg-icon='images/ic_star_black_24px.svg'></md-icon>
-              <md-icon md-svg-icon='images/ic_star_black_24px.svg'></md-icon>
-              <md-icon md-svg-icon='images/ic_star_black_24px.svg'></md-icon>
-            </div>
             <span class="md-headline">{{ movie.Director }}</span>
             <span class="md-subhead">Rating : {{ movie.imdbRating }}</span>
             <span class="md-subhead">Genre: {{ movie.Genre }}</span>
