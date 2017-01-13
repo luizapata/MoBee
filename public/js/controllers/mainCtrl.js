@@ -14,11 +14,11 @@ angular.module('mainController', ['FindService'])
 
   $scope.findMovie = function(){
     console.log('works')
-    if($scope.film.length > 3) {
+    // if($scope.film.length > 3) {
       Find.getForSearch($scope.film).then(function(res){
         $scope.search = res.Search;
       });
-    }    
+    // }    
   };
 
   $scope.addToMovies = function(title){

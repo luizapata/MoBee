@@ -51,17 +51,13 @@ md-card md-card-header md-card-header-text{
 }
 
 .btn {
-  -webkit-border-radius: 5;
-  -moz-border-radius: 5;
-  border-radius: 5px;
-  font-family: Arial;
-  color: #000000;
-  font-size: 12px;
-  background: #c9d1d6;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+  height: 30px !important;
+  color: #F57170 !important:;
 }
 
+.md-button.md-hue-1.md-primary {
+    color: DimGrey;
+}
 
 
 .enjoy-css {

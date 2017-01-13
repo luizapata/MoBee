@@ -6,11 +6,12 @@
 
   <div layout="row" >
     <div flex></div>
-    <md-input-container flex="40" md-no-float>
+    <md-input-container class="md-icon-float md-block" flex="40" md-no-float>
       <label>Title</label>
       <md-icon ><i class="material-icons theaters">theaters</i></md-icon>
-      <input class="enjoy-css" type="search" ng-change='findMovie()' ng-model='film'/>
+      <input class="enjoy-css"  ng-submit='findMovie()' ng-model='film'/>
     </md-input-container>
+    <md-button class="btn md-primary md-hue-1" ng-click='findMovie()'>Submit</md-button>
     <div flex></div>
   </div>
 
